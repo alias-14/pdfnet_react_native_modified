@@ -9,7 +9,8 @@ import android.view.ViewGroup;
 
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.pdftron.pdf.PDFDoc;
-import com.pdftron.pdf.PDF.FieldIterator;
+import com.pdftron.pdf.FieldIterator;
+import com.pdftron.pdf.Field;
 import com.pdftron.pdf.PDFViewCtrl;
 import com.pdftron.pdf.config.ToolManagerBuilder;
 import com.pdftron.pdf.utils.AppUtils;

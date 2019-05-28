@@ -20,6 +20,7 @@ public class PDFViewCtrlViewManager extends ViewGroupManager<PDFViewCtrlView> {
         PDFViewCtrlView pdfViewCtrlView = new PDFViewCtrlView(reactContext, null);
         pdfViewCtrlView.setup(reactContext);
 
+
         return pdfViewCtrlView;
     }
 

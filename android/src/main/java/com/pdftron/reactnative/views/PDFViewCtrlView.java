@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.pdftron.pdf.PDFDoc;
+import com.pdftron.pdf.PDF.FieldIterator
 import com.pdftron.pdf.PDFViewCtrl;
 import com.pdftron.pdf.config.ToolManagerBuilder;
 import com.pdftron.pdf.utils.AppUtils;
@@ -50,6 +51,14 @@ public class PDFViewCtrlView extends PDFViewCtrl {
         try {
             Uri fileUri = ReactUtils.getUri(getContext(), path);
             mPdfDoc = openPDFUri(fileUri, "");
+            FieldIterator itr;
+            for(itr = mPdfDoc.getFieldIterator(); itr.hasNext();){
+              Field current = itr.next();
+              if(current.getType() == Field.e_text){
+                current.setValue("bob");
+                current.refreshAppearance();
+              }
+            }
         } catch (Exception ex) {
             Log.e(TAG, ex.getMessage() != null ? ex.getMessage() : "unknown error");
             ex.printStackTrace();
